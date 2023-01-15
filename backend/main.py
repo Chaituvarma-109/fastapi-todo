@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
-from .routers import users, items
-from .database import engine
-from . import models
+from backend.todo.routers import users, items
+from backend.todo.database import engine
+from backend.todo import models
 
 
 app = FastAPI()
