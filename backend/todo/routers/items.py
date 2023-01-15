@@ -15,3 +15,8 @@ router = APIRouter(
 @router.post('/', status_code=status.HTTP_201_CREATED)
 def create_item(request: schemas.TodoList, db: Session = Depends(get_db)):
     return items.create_item(request, db)
+
+
+@router.get('/', response_model=list[schemas.ShowList])
+def get_lists(db: Session = Depends(get_db)):
+    return items.get_all_items(db)

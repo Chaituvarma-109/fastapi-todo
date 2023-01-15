@@ -16,7 +16,7 @@ class User(BaseModel):
 
 class ShowUser(BaseModel):
     name: str
-    item: list[TodoList] = []
+    todo_items: list[TodoList] = []
 
     class Config:
         orm_mode = True
@@ -24,7 +24,7 @@ class ShowUser(BaseModel):
 
 class ShowList(BaseModel):
     description: str
-    creator: ShowUser
+    owner: ShowUser
 
     class Config:
         orm_mode = True

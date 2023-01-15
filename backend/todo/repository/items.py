@@ -10,3 +10,8 @@ def create_item(request: schemas.TodoList, db: Session):
     db.refresh(new_item)
 
     return new_item
+
+
+def get_all_items(db: Session):
+    todo_items = db.query(models.TodoList).all()
+    return todo_items
