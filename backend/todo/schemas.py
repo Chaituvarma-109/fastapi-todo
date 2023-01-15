@@ -20,11 +20,3 @@ class ShowUser(BaseModel):
 
     class Config:
         orm_mode = True
-
-
-class ShowList(BaseModel):
-    description: str
-    owner: ShowUser
-
-    class Config:
-        orm_mode = True
